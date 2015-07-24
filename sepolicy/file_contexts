@@ -1,0 +1,3 @@
+/system/bin/app_process_xposed          u:object_r:zygote_exec:s0
+/system/bin/app_process32_xposed        u:object_r:zygote_exec:s0
+/system/bin/app_process64_xposed        u:object_r:zygote_exec:s0

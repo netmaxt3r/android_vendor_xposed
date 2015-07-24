@@ -1,0 +1,21 @@
+# xposed
+type xposed, domain , mlstrustedsubject;
+type xposed_exec, exec_type, file_type;
+
+allow zygote xposed:process dyntransition;
+allow system_server xposed:binder call;
+
+allow xposed app_data_file:dir { write remove_name add_name search };
+allow xposed app_data_file:file { rename write getattr read create open unlink };
+allow xposed logd:unix_stream_socket connectto;
+allow xposed logdr_socket:sock_file write;
+allow xposed servicemanager:binder call;
+allow xposed system_file:file execute_no_trans;
+allow xposed system_server:binder { transfer call };
+allow xposed zygote:process sigchld;
+allow xposed self:capability setgid;
+allow xposed zygote:fd use;
+
+allow servicemanager xposed:dir search;
+allow servicemanager xposed:file { read open };
+allow servicemanager xposed:process getattr;
